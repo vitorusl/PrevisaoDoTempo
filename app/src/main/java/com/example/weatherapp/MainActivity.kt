@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     val CITY: String = "são paulo,br"
     val API: String = "6e4ca54b59b3892d5409cc23e5a900ee"
     val LANG: String = "pt_br"
+    var index: Int = 9
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,13 +52,15 @@ class MainActivity : AppCompatActivity() {
             return response
         }
 
+
+
         //Faz a leitura do dados e modifica os textos da HomeScreen
         @RequiresApi(Build.VERSION_CODES.O)
         override fun onPostExecute(result: String?) {
             try {
                 //Extraindo dados do JSON da API
                 val jsonObj = JSONObject(result)
-                val today = jsonObj.getJSONArray("list").getJSONObject(0)
+                val today = jsonObj.getJSONArray("list").getJSONObject(index)
                 val main = today.getJSONObject("main")
                 val wind = today.getJSONObject("wind")
                 val weather = today.getJSONArray("weather").getJSONObject(0)
