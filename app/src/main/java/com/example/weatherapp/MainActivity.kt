@@ -1,6 +1,5 @@
 package com.example.weatherapp
 
-import android.content.DialogInterface
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
@@ -14,15 +13,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import org.json.JSONObject
 import java.net.URL
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    val CITY: String = "são paulo,br"
+    val CITY: String = "seropédica,br"
     val API: String = "6e4ca54b59b3892d5409cc23e5a900ee"
     val LANG: String = "pt_br"
     var index: Int = 0
